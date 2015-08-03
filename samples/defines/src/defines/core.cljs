@@ -1,12 +1,13 @@
-(ns hello-world.core
-  (:require-macros hello-world.core))
-
+(ns defines.core)
+  
 (enable-console-print!)
 
-(def ^{:jsdoc ["@define {boolean}"]}
-  DBG true)
+(define DEBUG false)
 
-(if DBG
+(println js/CLOSURE_DEFINES)
+(println js/goog.global.CLOSURE_DEFINES)
+
+(if DEBUG
   (println "Debugging enabled")
   (println "Debugging disabled"))
 
