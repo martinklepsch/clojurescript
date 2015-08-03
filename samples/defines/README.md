@@ -30,6 +30,14 @@ no values from `CLOSURE_DEFINES` or `CLOSURE_UNCOMPILED_DEFINES` will be used.
 In comparison `goog.define` does
 [the runtime lookup](http://google.github.io/closure-library/api/source/closure/goog/base.js.src.html#l157).
 
+---
+
+There is an example in this directory where you can see that modifying
+the `:closure-defines` passed to the compiler will not have any effect
+on the compiled `core.js`.
+
+---
+
 Docstrings for [`CLOSURE_DEFINES`](http://google.github.io/closure-library/api/source/closure/goog/base.js.src.html#l70)
 and [`CLOSURE_UNCOMPILED_DEFINES`](http://google.github.io/closure-library/api/source/closure/goog/base.js.src.html#l51)
 are also interesting.
