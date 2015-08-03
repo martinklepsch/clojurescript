@@ -1137,7 +1137,8 @@
              "goog.require(\"" (comp/munge (:main opts)) "\");\n"
              "goog.require(\"cljs.nodejscli\");\n"))
       (output-one-file opts
-        (str "if(typeof goog == \"undefined\") document.write('<script src=\"" asset-path "/goog/base.js\"></script>');\n"
+        (str "var CLOSURE_DEFINES = " (json/write-str (:closure-defines opts)) ";"
+             "if(typeof goog == \"undefined\") document.write('<script src=\"" asset-path "/goog/base.js\"></script>');\n"
              "document.write('<script src=\"" asset-path "/cljs_deps.js\"></script>');\n"
              "document.write('<script>if (typeof goog != \"undefined\") { goog.require(\"" (comp/munge (:main opts))
              "\"); } else { console.warn(\"ClojureScript could not load :main, did you forget to specify :asset-path?\"); };</script>');\n")))))
